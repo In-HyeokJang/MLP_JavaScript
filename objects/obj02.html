@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let output  ='';
+        let student = {
+            이름 : '홍길동',
+            국어 : 90,
+            수학 : 100,
+            영어 : 100,
+            과학 : 80
+        };
+
+        output += `name : ${student.이름} \n`;
+        output += `kuk : ${student.국어} \n`;
+        output += `mat : ${student.수학} \n`;
+        output += `eng : ${student.영어} \n`;
+        output += `sig : ${student.과학} \n`;
+        output += `tot : ${student.국어 + student.영어 + student.수학  + student.과학} \n`;
+        
+        console.log(output);
+        with(student){
+            output += `name : ${이름} \n`;
+            output += `kuk : ${국어} \n`;
+            output += `mat : ${수학} \n`;
+            output += `eng : ${영어} \n`;
+            output += `sig : ${과학} \n`;
+            output += `tot : ${국어 + 영어 + 수학  + 과학} \n`;
+        }
+
+        console.log(output);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

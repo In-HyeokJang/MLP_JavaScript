@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="utility.js"></script>
+</head>
+<body>
+    <h2>성적처리</h2>
+    <hr>
+    <script>
+        let kuk = prompt('국어점수를 입력하세요.',0);
+        let eng = prompt('영어점수를 입력하세요.',0);
+        let mat = prompt('수학점수를 입력하세요.',0);
+
+        let tot = parseInt(kuk) + parseInt(eng) + parseInt(mat);
+        let avg = tot / 3;
+
+        let star = '';
+        for(let i=0; i < avg/10; i++){
+            star = star + '☆';
+        }
+        p("<table>");
+        p("<tr><th> 점수 </th></tr>");
+        p(`<tr><td> 국어: ${kuk} </td></tr>`);
+        p(`<tr><td> 영어: ${eng} </td></tr>`);
+        p(`<tr><td> 수학: ${mat} </td></tr>`);
+        p(`<tr><td> 총점: ${tot} </td></tr>`);
+        p(`<tr><td> 평균: ${avg} </td></tr>`);
+        p(`<tr><td> 평가: ${star} </td></tr>`);
+        p("</table>");
+
+    </script>
+</body>
+</html>

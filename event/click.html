@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheep" href="../style.css">
+    <script>
+        function setUrl(no){
+            // alert(no);
+            if(no == 1){
+                document.regiform.url.value = 'https://www.daum.net/';
+            }else if(no ==2){
+                document.regiform.url.value = 'https://www.weather.go.kr/w/index.do';
+            }else if(no ==3){
+                document.regiform.url.value = 'https://www.kyobobook.co.kr/index.laf';
+            }
+        }
+        function sendit(){
+            // alert("call");
+            // let str = document.regiform.url.value; // name으로 찾는거
+            let str = document.getElementById("url").value; // id로 검색후 찾는거
+            if(str.indexOf('https://') != 0){
+                str = `https://${str}`;
+            }
+            console.log(str);
+            if(str == ""){
+                alert("주소를 입력해 주세요.");
+                // document.regiform.url.focus();
+                document.getElementById("url").focus();
+                
+            }else{
+                location.href = str;
+            }
+        }
+
+        // 이건 검색시 바로 주소 이동 하게 하는거 
+
+
+        function daum(){
+            window.location.href = 'https://www.daum.net/';
+        }
+        function weather(){
+            window.location.href = 'https://www.weather.go.kr/w/index.do';
+        }
+        function kyo(){
+            window.location.href = 'https://www.kyobobook.co.kr/index.laf';
+        }
+    </script>
+</head>
+<body>
+    <form name="regiform">
+        <input type="text" id="url" name="url" size="50">
+        <a href="javascript:sendit()">주소이동</a>
+        <button type="button" onclick="sendit()">주소이동</button><br>
+        <button type="button" onclick="setUrl(1)">[DAUM]</button><br>
+        <button type="button" onclick="setUrl(2)">[기상청]</button><br>
+        <button type="button" onclick="setUrl(3)">[교보문고]</button><br>
+
+        <button type="button" onclick="daum()">daum</button>
+
+    </form>
+</body>
+</html>

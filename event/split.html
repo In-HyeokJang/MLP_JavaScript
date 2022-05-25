@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheep" href="../style.css">
+    <script>
+        function searchW(){
+            let str = '기획자/설계자/개발자/디자이너';
+            let strout = '';
+            let strSplit = str.split('/');
+            console.log(`추출된 문자열 갯수 : ${strSplit.length}`);
+            for(let i=0; i<strSplit.length; i++){
+                strout += `😜${strSplit[i]} `;
+            }
+            let panel = document.getElementById('panel')
+            panel.innerHTML = strout;
+        }
+    </script>
+</head>
+<body onload="searchW()">
+    <div id="panel"></div>
+</body>
+</html>

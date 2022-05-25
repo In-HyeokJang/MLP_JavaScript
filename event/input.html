@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheep" href="../style.css">
+    <script>
+        function check(f){
+            if(f.wname.value == '' || f.wname.value.length == 0){
+                alert('이름을 입력하세요');
+                f.wname.focus();
+                // return false; //onsubmit에서만 사용 
+            }else if(f.subject.value.length == 0) {
+                alert('제목을 입력하세요');
+                f.subject.focus();
+                // return false;
+            }else if(f.wcontent.value == ''){
+                alert('내용을 입력하세요');
+                f.wcontent.focus();
+                // return false;
+            }else{
+                alert('데이터 정상 입력, 계속진행합니다.');
+                 f.submit();
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form method="post" action="" name="myform"> 
+        
+        <h2>방명록</h2>
+        이름 : <input type="text" name="wname"><br>
+        제목 : <input type="text" name="subject" size="50"><br>
+        내용 : <textarea name="wcontent" rows="8" cols="54"></textarea><br>
+        <!-- <button type="button" onclick="check(this.form)">저장</button>  -->
+        <!-- <button>저장</button> sumbit기능 사용 -> onsubcit = reterun check()-->
+        <!-- <input type="image" src="disks.jpg"></input> sumbit 기능 사용 -> onsubcit = reterun check() -->
+        <a href="javascript:check(myform)">
+            <img src="disks.jpg" border="0">
+        </a>
+
+    </form>
+</body>
+</html>

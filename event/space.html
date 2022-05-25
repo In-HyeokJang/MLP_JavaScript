@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function trimSpace(f){
+            let str = f.txtData.value;
+            console.log(str);
+            for(let i=0; i<str.length; i++){
+                if(str.charAt(i) == ' '){
+                    str = str.substring(0,i) + str.substring(i+1);
+                    i = i-1; // 2개이상 빈공간 왔을때 i-1 안하면 빈공강 생김
+                }
+            }
+            f.txtData2.value = str;
+        }
+    </script>
+
+</head>
+<body>
+    <form name="myform">
+        원본문자열: <input name="txtData" type="text" size="60" maxlength="60">
+        <a href="javascript:trimSpace(myform)"><b>문자열 공백지우기</b></a>
+        <br><br>
+        공백 제거 문자열 : <input name="txtData2" type="text" size="60" maxlength="60">
+    </form>
+</body>
+</html>
